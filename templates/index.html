@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Language Translator</h1>
+        <form action="/translate" method="post">
+            <textarea name="text" placeholder="Enter text to translate" required></textarea>
+            <select name="src_lang">
+                <option value="auto">Auto Detect</option>
+                <option value="en">English</option>
+                <!-- Add more languages as needed -->
+            </select>
+            <select name="dest_lang">
+                <option value="en">English</option>
+                <!-- Add more languages as needed -->
+            </select>
+            <button type="submit">Translate</button>
+        </form>
+        {% if translated_text %}
+        <div class="translated-text">
+            <h2>Translated Text</h2>
+            <p>{{ translated_text }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
